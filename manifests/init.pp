@@ -52,10 +52,10 @@ class xrdp(
 	String $service_name        = $xrdp::params::service_name,
 	Boolean $service_enable     = $xrdp::params::service_enable,
 	Boolean $service_hasrestart = $xrdp::params::service_hasrestart,
-	Boolean $service_hasstatus  = $xrdp::params::service_haststatus,
-) inherits ::xrdp::params  {
-	class {'xrdp::install': }
-	-> class {'::xrdp::config':}
-	-> class {'::xrdp::service':}
+	Boolean $service_hasstatus  = $xrdp::params::service_hasstatus,
 
+) inherits ::xrdp::params {
+#  class { '::xrdp::install': }
+#  -> class { '::xrdp::config': }
+#  ~> class { '::xrdp::service': }
 }
