@@ -55,7 +55,13 @@ class xrdp(
 	Boolean $service_hasstatus  = $xrdp::params::service_hasstatus,
 
 ) inherits ::xrdp::params {
-#  class { '::xrdp::install': }
-#  -> class { '::xrdp::config': }
-#  ~> class { '::xrdp::service': }
+
+  contain xrdp::install 
+  contain xrdp::config
+  contain xrdp::service
+ 
+    Class[xrdp::install]
+  -> Class[xrdp::config]
+  ~> Class[xrdp::service]
+
 }
