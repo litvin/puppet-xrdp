@@ -5,8 +5,8 @@ class xrdp::service(
 	Boolean $service_hasstatus  = $xrdp::service_hasstatus,
 	Boolean $service_hasrestart = $xrdp::service_hasrestart,
 ){
-	service { 'xrdp':
-		ensure     => $service_ensuer,
+	service { 'xrdp.service':
+		ensure     => $service_ensure,
 		enable     => $service_enable,
 		name       => $service_name,
 		hasstatus  => $service_hasstatus,

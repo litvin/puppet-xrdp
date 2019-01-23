@@ -59,9 +59,10 @@ class xrdp(
   contain xrdp::install 
   contain xrdp::config
   contain xrdp::service
+  contain xrdp::fw
  
-    Class[xrdp::install]
-  ~> Class[xrdp::config]
-  ~> Class[xrdp::service]
-
+   Class[xrdp::install]
+   -> Class[xrdp::config]
+   -> Class[xrdp::service]
+   -> Class[xrdp::fw]
 }

@@ -5,4 +5,12 @@ class xrdp::install(
 	package { $package_name:
 		ensure => $package_ensure 
 	}
+
+	case $::osfamily {
+	    'Redhat': {
+		file { '/etc/sysconfig/desktop':
+      		   content => 'PREFERRED="$(type -p mate-session)"',
+	    	   }
+  	     }
+	}
 }
