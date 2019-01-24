@@ -48,6 +48,7 @@ class xrdp(
 	String $config_name         = $xrdp::params::config_name,
 	String $config_file_mode    = $xrdp::params::config_file_mode,
 	String $config_ls_title     = $xrdp::params::config_ls_title,
+	String $config_file 	    = $xrdp::params::config_file,
 	String $service_ensure      = $xrdp::params::service_ensure,
 	String $service_name        = $xrdp::params::service_name,
 	Boolean $service_enable     = $xrdp::params::service_enable,

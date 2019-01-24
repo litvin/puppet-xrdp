@@ -10,10 +10,14 @@ class xrdp::params {
 	$service_hasrestart = true
 	$service_name       = 'xrdp.service'
 
-#	$service_name = $fact['os']['family'] ? {
-#		'Debian' => 'xrdp.service',
-#		default  => 'xrdp',
-#	}
+case $::osfamily {
+    'Debian': {
+	$config_file   = 'astra.xrdp.ini.erb'
+	    }
+    'Redhat': {
+	$config_file   = 'rosa.xrdp.ini.erb'
+	    }
+      }
 
 }
 
