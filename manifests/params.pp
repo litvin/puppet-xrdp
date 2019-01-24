@@ -8,7 +8,7 @@ class xrdp::params {
 	$service_enable     = true
 	$service_hasstatus  = true
 	$service_hasrestart = true
-	$service_name       = 'xrdp.service'
+	$service_name       = 'xrdp'
 
 case $::osfamily {
     'Debian': {
