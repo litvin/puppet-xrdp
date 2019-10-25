@@ -51,6 +51,7 @@ class xrdp(
 	String $config_file 	    = $xrdp::params::config_file,
 	String $service_ensure      = $xrdp::params::service_ensure,
 	String $service_name        = $xrdp::params::service_name,
+	String $service_provider    = $xrdp::params::service_provider,
 	Boolean $service_enable     = $xrdp::params::service_enable,
 	Boolean $service_hasrestart = $xrdp::params::service_hasrestart,
 	Boolean $service_hasstatus  = $xrdp::params::service_hasstatus,
@@ -62,7 +63,7 @@ class xrdp(
   contain xrdp::service
   contain xrdp::fw
  
-   Class[xrdp::install]
+  Class[xrdp::install]
    -> Class[xrdp::config]
    -> Class[xrdp::service]
    -> Class[xrdp::fw]

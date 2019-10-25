@@ -9,13 +9,14 @@ class xrdp::params {
 	$service_hasstatus  = true
 	$service_hasrestart = true
 	$service_name       = 'xrdp'
+	$service_provider   = 'systemd'
 
 case $::osfamily {
     'Debian': {
-	$config_file   = 'astra.xrdp.ini.erb'
+	$config_file        = 'astra.xrdp.ini.erb'
 	    }
     'Redhat': {
-	$config_file   = 'rosa.xrdp.ini.erb'
+	$config_file        = 'rh.xrdp.ini.erb'
 	    }
       }
 
